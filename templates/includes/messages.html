@@ -1,0 +1,24 @@
+<style>
+#info_msg{
+    text-align: center;
+    padding-left: 10px;
+}
+#x_button{
+  padding-left: 10px;
+}
+
+</style>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    
+    {% for category, message in messages %}
+      <div id="info_msg" class="alert alert-{{ category }} d-inline-flex p-2" role="alert">
+          <strong >{{ message }}<button class="close" type="button" data-dismiss="alert" aria-hidden="true">
+            <span id="x_button" class="fa fa-times"></span></button></strong>
+        </div>
+    {% endfor %}
+    
+  {% endif %}
+{% endwith %}

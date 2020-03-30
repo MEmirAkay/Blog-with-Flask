@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% if article %}
+
+<style>
+
+</style>
+
+<h1 class="display-4">{{article.title}}</h1>
+<hr>
+<p>
+<footer class="blockquote-footer">{{article.created_date}}</footer> 
+<strong>Yazar:</strong> {{article.author}}
+</p>
+<br>
+<p>{{article.content}}</p>
+{% else %}
+<div class="alert alert-warning">Makale bulunamadı...</div>
+{% endif %}
+{% endblock body %}

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand brand-lg" href="/"><strong>BLOG</strong></a>
+        <button class="navbar-toggler btn-lg" type="button" data-toggle="collapse" data-target="#navbarsExample07"
+            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about">Hakkımızda</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/articles">Makaleler</a>
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+
+
+
+            </ul>
+            {% if session["logged_in"] %}
+            <div class="dropdown">
+                <button class="btn btn-dark btn-lg" type="button" data-toggle="dropdown">
+                    <span class="far fa-user-circle"></span>
+                </button>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a class="nav-link text-light" href="/dashboard"><strong>Kontrol Paneli</strong></a></li>
+                    <li><a class="nav-link text-light" href="/user_profile"><strong>Profil</strong></a></li>
+                    <li><a class="nav-link text-light" href="/user_setting"><strong>Ayarlar</strong></a></li>
+                    <li><a class="nav-link text-danger" href="/logout">Çıkış Yap</a></li>
+                </ul>
+            </div>
+            {% else %}
+            
+                
+                    <a class="nav-link text-light" href="/login">Giriş Yap</a>
+                
+
+                
+                    <a class="nav-link text-light" href="/register">Kayıt Ol</a>
+                
+            
+
+
+
+            {% endif %}
+
+
+        </div>
+    </div>
+</nav>

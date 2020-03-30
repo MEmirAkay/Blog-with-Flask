@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h2>Bloğuma Hoş Geldiniz</h2>
+        <p>Burada kendimden oldukca fazla bahsediyorum :)</p>
+    </div>
+{% if answer == "evet" %}
+<p>evet</p>
+{% else %}
+<p>nope</p>
+{% endif %}
+
+
+
+{% endblock %}

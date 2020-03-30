@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <style>
+    #makale_ekle{
+        padding-bottom:20px;
+
+    }
+    </style>
+
+    <h3>Kontrol Paneli</h3>
+    <hr>
+    <div id="makale_ekle">
+    <a href="/addarticle"><button class="btn btn-success"><strong>Makale Ekle +</strong></button></a>
+    </div>
+    
+{% if articles %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Oluşturulma Tarihi</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for article in articles %}
+  
+    <tr>
+      <th scope="row">{{article.id}}</th>
+      <td><a href="/articles/{{article.id}}">{{article.title}}</a></td>
+      <td>{{article.created_date}}</td>
+      <td><a href="/update/{{article.id}}"><button class="btn btn-info">Güncelle</button></a></td>
+      <td><a href="/delete/{{article.id}}}}"><button class="btn btn-danger">Sil</button></a></td>
+    </tr>
+  
+  {% endfor %}
+    
+    
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-dangel">Henüz Makaleniz bulunmuyor.</div>
+{% endif %}
+
+
+
+
+
+
+
+{% endblock %}
+

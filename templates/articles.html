@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h3>Makaleler</h3>
+<hr>
+
+<form action="/search" method="POST" class="form-inline d-flex justify-content-left md-form form-sm" >
+    <input class="form-control mr-3 w-25" type="text submit" placeholder="Search" name="keyword"
+      aria-label="Search">
+    <i class="fas fa-search" aria-hidden="true"></i>
+  </form>
+<br>    
+
+{% if articles %}
+
+<ul class="list-group">
+
+    {% for article in articles %}
+    <a href="/articles/{{article.id}}"><li class = "list-group-item">{{article.title}}</li></a>
+    {% endfor %}
+
+</ul>
+
+
+{% else %}
+<div class="alert alert-danger">Henüz Makale bulunmamakadır.</div>
+{% endif %}
+
+
+{% endblock body %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Giriş Yap</h3>
+{% from "includes/formhelpers.html" import render_field %}
+
+<style>
+ 
+#login_form{
+  padding-left: 250px;
+  padding-right: 250px;
+  
+}
+
+</style>
+
+<form method="POST" id="login_form">
+  <dl id="login_input">
+    
+    {{ render_field(form.username,class="form-control") }}
+    
+    {{ render_field(form.password,class="form-control") }}
+    
+  </dl>
+  <button type="submit" class="btn btn-success">Giriş Yap</button>
+</form>
+
+
+{% endblock %}
